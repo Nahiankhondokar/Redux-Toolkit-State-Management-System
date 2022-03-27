@@ -1,50 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeEmail, changeName, changePhoto } from '../redux/userSlice';
+import { changeName, changePhoto, changeEmail } from '../../redux/teacherSlice';
 
+const Teacher = () => {
 
-
-const Home = () => {
-
-  const dispatch = useDispatch();  
-  const data = useSelector(state => state.user);
+    const d = useSelector(state => state.teacher);
+    const dispatch = useDispatch();
 
   return (
     <>
-    
     <Card className='shadow'>
                     <Card.Body>
-                        <h2>Create an User</h2>
+                        <h2>Create a Teacher</h2>
                         <hr />
                         <Form>
                             <Form.Group>
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control value={data.name} onChange={ e => dispatch(changeName({name : e.target.value})) }></Form.Control>
+                                <Form.Control value={d.name} onChange={(e) => dispatch(changeName({name : e.target.value}))}></Form.Control>
                             </Form.Group>
 
                             <Form.Group>
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control value={data.email} onChange={ e => dispatch(changeEmail({email : e.target.value})) }></Form.Control>
+                                <Form.Control value={d.email} onChange={(e) => dispatch(changeEmail({email : e.target.value}))}></Form.Control>
                             </Form.Group>
 
                             <Form.Group>
                                 <Form.Label>Photo</Form.Label>
-                                <Form.Control value={data.photo} onChange={ e => dispatch(changePhoto({photo : e.target.value})) }></Form.Control>
+                                <Form.Control value={d.photo} onChange={(e) => dispatch(changePhoto({photo : e.target.value}))}></Form.Control>
                             </Form.Group>
                                 <br/>
                             <Form.Group>
-                                <Button variant='info'> Add User</Button>
+                                <Button variant='info'> Add Teacher</Button>
                             </Form.Group>
                             <Card.Footer>
-                                name : {data.name} | email : {data.email} | Photo : {data.photo}
+                                name : {d.name} | email : {d.email} | Photo : {d.photo}
                             </Card.Footer>
                         </Form>
                     </Card.Body>
                 </Card>
-    
     </>
   )
 };
 
-export default Home;
+export default Teacher;

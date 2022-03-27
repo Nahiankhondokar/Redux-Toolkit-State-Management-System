@@ -9,13 +9,8 @@ const Shop = () => {
 
   return (
     <>
-    <Container>
-        <Row className='justify-content-center my-5'>
-            <Col md={6}>
                 <Card className='shadow'>
                     <Card.Body>
-                        <h2>User Table</h2>
-                        <hr />
                         <Table>
                             <tr>
                                 <td>Name</td>
@@ -34,9 +29,6 @@ const Shop = () => {
                         </Table>
                     </Card.Body>
                 </Card>
-            </Col>
-        </Row>
-    </Container>
     </>
   )
 }

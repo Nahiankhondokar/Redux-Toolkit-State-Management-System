@@ -2,15 +2,15 @@ import React from 'react';
 import { Card, Col, Container, Form, Row, Button, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 
+const StaffShop = () => {
 
-const About = () => {
+    const data = useSelector(state => state.staff);
 
-    const data = useSelector(state => state.user)
 
   return (
     <>
     
-                <Card className='shadow'>
+    <Card className='shadow'>
                     <Card.Body>
                         <Table>
                             <tr>
@@ -30,8 +30,8 @@ const About = () => {
                         </Table>
                     </Card.Body>
                 </Card>
-                </>
+    </>
   )
 };
 
-export default About;
+export default StaffShop;

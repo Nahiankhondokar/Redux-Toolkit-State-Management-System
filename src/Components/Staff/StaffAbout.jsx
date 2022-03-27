@@ -2,10 +2,9 @@ import React from 'react';
 import { Card, Col, Container, Form, Row, Button, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 
+const StaffAbout = () => {
 
-const About = () => {
-
-    const data = useSelector(state => state.user)
+    const data = useSelector(state => state.staff);
 
   return (
     <>
@@ -34,4 +33,4 @@ const About = () => {
   )
 };
 
-export default About;
+export default StaffAbout;
